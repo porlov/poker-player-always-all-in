@@ -38,7 +38,7 @@ class Player:
         if isPostFlop: 
             return getPostFlopBet(game_state, self.player)
         
-        return bet
+        return 0
             
         # bet = self.get_bet_v1(self.player)
         print 'BET: ', bet
