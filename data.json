@@ -6,7 +6,18 @@
   "bet_index": 3,
   "small_blind": 2,
   "community_cards": [
-
+    {
+      "suit": "hearts",
+      "rank": "K"
+    },
+    {
+      "suit": "hearts",
+      "rank": "Q"
+    },
+    {
+      "suit": "hearts",
+      "rank": "J"
+    }
   ],
   "minimum_raise": 96,
   "round": 4,

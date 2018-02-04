@@ -1,3 +1,6 @@
+import json
+import requests
+
 from card_converter import card_converter
 from shouldBet import shouldBet
 from strategy import Strategy
@@ -6,11 +9,24 @@ from pre_flop import getPreFlopBet
 
 
 class Player:
-    VERSION = "Version_17"
+    VERSION = "Version_18"
 
     def get_player(self):
         player_index = self.game_state['in_action']
         return self.game_state['players'][player_index]
+
+    def get_post_flop_rank(self):
+        cards = self.game_state['community_cards']
+        cards += self.player['hole_cards']
+
+        print 'POST FLOP CARDS: ', cards
+
+        payload = json.dumps(cards)
+        response = requests.get('http://rainman.leanpoker.org/rank', params='cards=%s' % payload).json()
+        rank = response['rank']
+
+        print 'RANK: ', rank
+        return rank
 
     def log_state(self):
         print 'STATE: ', self.game_state
@@ -22,8 +38,8 @@ class Player:
         
         self.log_state()
 
-        cardsOnFlop = game_state['community_cards']        
-        isPostFlop = len(cardsOnFlop) > 0
+        cardsOnFlop = len(game_state['community_cards'])
+        isPostFlop = cardsOnFlop > 0
         
         if not isPostFlop:
             strategy = Strategy(player=self.player, game_state=self.game_state)
@@ -35,7 +51,12 @@ class Player:
             
 
         # post flop
-        if isPostFlop: 
+        if isPostFlop:
+            rank = self.get_post_flop_rank()
+            if rank >= 2:
+                return min(self.player['stack'], max(self.game_state['pot'], self.player['stack'] / 8))
+            if rank == 0 and cardsOnFlop >= 5:
+                return 0
             return getPostFlopBet(game_state, self.player)
         
         return 0
@@ -56,4 +77,3 @@ class Player:
         if not is_betting:
             return 0
         return my_stack
-
