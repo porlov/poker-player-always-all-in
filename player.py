@@ -4,7 +4,7 @@ from strategy import Strategy
 
 
 class Player:
-    VERSION = "Version_08"
+    VERSION = "Version_09"
 
     def get_player(self):
         player_index = self.game_state['in_action']
@@ -32,8 +32,8 @@ class Player:
 
     def get_bet_v1(self):
         my_stack = self.player['stack']
-
         my_cards = self.player['hole_cards']
+
         converted_cards = card_converter(my_cards)
         is_betting = shouldBet(converted_cards)
 
