@@ -1,10 +1,11 @@
 from card_converter import card_converter
 from shouldBet import shouldBet
 from strategy import Strategy
+from post_flop import getPostFlopBet
 
 
 class Player:
-    VERSION = "Version_09"
+    VERSION = "Version_12_postflop"
 
     def get_player(self):
         player_index = self.game_state['in_action']
@@ -20,12 +21,23 @@ class Player:
         
         self.log_state()
 
-        strategy = Strategy(player=self.player, game_state=self.game_state)
-        bet = strategy.get_bet()
-        # bet = self.get_bet_v1(self.player)
+        cardsOnFlop = game_state['community_cards']        
+        isPostFlop = len(cardsOnFlop) > 0
+        
+        if not isPostFlop:
+            strategy = Strategy(player=self.player, game_state=self.game_state)
+            bet = strategy.get_bet()
+            if bet > 0:
+                return bet
 
-        print 'BET: ', bet
+        # post flop
+        if isPostFlop: 
+            return getPostFlopBet(game_state, self.player)
+        
         return bet
+            
+        # bet = self.get_bet_v1(self.player)
+        print 'BET: ', bet
 
     def showdown(self, game_state):
         pass
