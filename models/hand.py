@@ -24,8 +24,8 @@ class Hand:
             chunks = line.replace('%', '').replace('\n', '').split('\t')
             short_description, probabilities = chunks[0], map(float, chunks[1:])
 
-            rank1 = short_description.replace('T', '10')[0]
-            rank2 = short_description.replace('T', '10')[1]
+            rank1 = short_description[0].replace('T', '10')
+            rank2 = short_description[1].replace('T', '10')
             suited = (len(short_description) == 3 and short_description[2] == 's')
             suit1 = 'fake_suit'
             suit2 = 'fake_suit' if suited else 'fake_suit_offsuited'
