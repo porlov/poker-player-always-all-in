@@ -9,6 +9,13 @@ class Player:
         my_player_index = game_state['in_action']
         my_player = game_state['players'][my_player_index]
         my_stack = my_player['stack']
+
+        my_cards = my_player['hole_cards']
+        convertedCards = card_converter(my_cards)
+
+        isBetting = shouldBet(convertedCards)
+        if not isBetting :
+            return 0
         print my_stack
         return my_stack
 

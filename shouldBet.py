@@ -7,6 +7,8 @@ def shouldBet(cards):
 
   if firstCard > 10 and secondCard > 10:
     return True
+  
+  return False
 
   # highiestRankCard = cards[0] if cards[0]['rank'] > cards[1]['rank'] else cards[1]
   # lowestRankCard = cards[1] if cards[1]['rank'] > cards[0]['rank'] else cards[0]
