@@ -1,83 +1,83 @@
-{  
-   "orbits": 0,
-   "dealer": 5,
-   "big_blind": 4,
-   "pot": 106,
-   "bet_index": 3,
-   "small_blind": 2,
-   "community_cards": [  
+{
+  "orbits": 0,
+  "dealer": 5,
+  "big_blind": 4,
+  "pot": 106,
+  "bet_index": 3,
+  "small_blind": 2,
+  "community_cards": [
 
-   ],
-   "minimum_raise": 96,
-   "round": 4,
-   "current_buy_in": 100,
-   "tournament_id": "5a561634da803a0004000003",
-   "game_id": "5a76cc7e5547c000040000b1",
-   "in_action": 3,
-   "players": [  
-      {  
-         "id": 0,
-         "time_used": 73234,
-         "name": "Red King",
-         "status": "active",
-         "stack": 976,
-         "bet": 2,
-         "version": "Red King 0.3"
-      },
-      {  
-         "id": 1,
-         "time_used": 36383,
-         "name": "DrunkRiver",
-         "status": "active",
-         "stack": 996,
-         "bet": 4,
-         "version": "WE ARE THE BEST"
-      },
-      {  
-         "id": 2,
-         "time_used": 83478,
-         "name": "PolniyDom",
-         "status": "active",
-         "stack": 498,
-         "bet": 100,
-         "version": "0.1"
-      },
-      {  
-         "id": 3,
-         "time_used": 82260,
-         "name": "Always All In",
-         "status": "active",
-         "hole_cards": [  
-            {  
-               "suit": "hearts",
-               "rank": "A"
-            },
-            {  
-               "suit": "hearts",
-               "rank": "K"
-            }
-         ],
-         "stack": 1436,
-         "bet": 0,
-         "version": "Version_05"
-      },
-      {  
-         "id": 4,
-         "time_used": 38524,
-         "name": "valEty",
-         "status": "active",
-         "stack": 994,
-         "bet": 0,
-         "version": "v 0.3"
-      },
-      {  
-         "id": 5,
-         "time_used": 40427,
-         "name": "Contra",
-         "status": "active",
-         "stack": 994,
-         "bet": 0,
-         "version": "0.1.5.1"
-      }
-   ]
+  ],
+  "minimum_raise": 96,
+  "round": 4,
+  "current_buy_in": 100,
+  "tournament_id": "5a561634da803a0004000003",
+  "game_id": "5a76cc7e5547c000040000b1",
+  "in_action": 3,
+  "players": [
+    {
+      "id": 0,
+      "time_used": 73234,
+      "name": "Red King",
+      "status": "active",
+      "stack": 976,
+      "bet": 2,
+      "version": "Red King 0.3"
+    },
+    {
+      "id": 1,
+      "time_used": 36383,
+      "name": "DrunkRiver",
+      "status": "active",
+      "stack": 996,
+      "bet": 4,
+      "version": "WE ARE THE BEST"
+    },
+    {
+      "id": 2,
+      "time_used": 83478,
+      "name": "PolniyDom",
+      "status": "active",
+      "stack": 498,
+      "bet": 100,
+      "version": "0.1"
+    },
+    {
+      "id": 3,
+      "time_used": 82260,
+      "name": "Always All In",
+      "status": "active",
+      "hole_cards": [
+        {
+          "suit": "hearts",
+          "rank": "A"
+        },
+        {
+          "suit": "hearts",
+          "rank": "9"
+        }
+      ],
+      "stack": 1436,
+      "bet": 0,
+      "version": "Version_05"
+    },
+    {
+      "id": 4,
+      "time_used": 38524,
+      "name": "valEty",
+      "status": "active",
+      "stack": 994,
+      "bet": 0,
+      "version": "v 0.3"
+    },
+    {
+      "id": 5,
+      "time_used": 40427,
+      "name": "Contra",
+      "status": "active",
+      "stack": 994,
+      "bet": 0,
+      "version": "0.1.5.1"
+    }
+  ]
 }

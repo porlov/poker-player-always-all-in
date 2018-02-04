@@ -20,22 +20,24 @@ class Player:
         
         self.log_state()
 
-        # strategy = Strategy(player=self.player, game_state=self.game_state)
-        # bet = strategy.get_bet()
-        # print 'BET: ', bet
+        strategy = Strategy(player=self.player, game_state=self.game_state)
+        bet = strategy.get_bet()
+        # bet = self.get_bet_v1(self.player)
 
-        return self.get_bet_v1(self.player)
+        print 'BET: ', bet
+        return bet
 
     def showdown(self, game_state):
         pass
 
-    def get_bet_v1(self, my_player):
-        my_stack = my_player['stack']
+    def get_bet_v1(self):
+        my_stack = self.player['stack']
 
-        my_cards = my_player['hole_cards']
-        convertedCards = card_converter(my_cards)
+        my_cards = self.player['hole_cards']
+        converted_cards = card_converter(my_cards)
+        is_betting = shouldBet(converted_cards)
 
-        isBetting = shouldBet(convertedCards)
-        if not isBetting:
+        if not is_betting:
             return 0
         return my_stack
+
