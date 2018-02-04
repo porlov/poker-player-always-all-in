@@ -5,7 +5,7 @@ from post_flop import getPostFlopBet
 
 
 class Player:
-    VERSION = "Version_11"
+    VERSION = "Version_12"
 
     def get_player(self):
         player_index = self.game_state['in_action']
