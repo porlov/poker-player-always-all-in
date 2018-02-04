@@ -2,12 +2,15 @@ from card_converter import card_converter
 from shouldBet import shouldBet
 
 class Player:
-    VERSION = "Version_04_fix_bugs"
+    VERSION = "Version_05"
 
     def betRequest(self, game_state):
+        print game_state
         my_player_index = game_state['in_action']
         my_player = game_state['players'][my_player_index]
-        return self.get_bet_v1(my_player)
+        my_stack = my_player['stack']
+        print my_stack
+        return my_stack
 
     def showdown(self, game_state):
         pass
