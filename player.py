@@ -22,7 +22,7 @@ class Player:
 
         # strategy = Strategy(player=self.player, game_state=self.game_state)
         # bet = strategy.get_bet()
-        print 'BET: ', bet
+        # print 'BET: ', bet
 
         return get_bet_v1(self.player)
 
