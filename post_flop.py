@@ -1,6 +1,6 @@
 def getPostFlopBet(game_state, current_player):
   cardsNumber = len(game_state['community_cards'])
-  bet = game_state['current_buy_in']
+  bet = game_state['current_buy_in'] - current_player['bet']
   stack = current_player['stack']
   minRaise = game_state['minimum_raise']
 
