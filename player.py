@@ -19,6 +19,3 @@ class Player:
 
     def showdown(self, game_state):
         pass
-
-
-    
