@@ -12,16 +12,3 @@ def card_converter(cards):
             converted_cards.append({"rank": new_card_rank, "suit": card['suit']})
 
         return converted_cards
-
-print(card_converter(
-    [                         
-        {
-            "rank": "6",                    
-            "suit": "hearts"                
-        },
-        {
-            "rank": "K",
-            "suit": "spades"
-        }
-    ]
-))
