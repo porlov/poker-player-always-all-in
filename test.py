@@ -1,9 +1,12 @@
+import json
+
 from player import Player
 
+
 def main():
-    json = open('./data.json', 'r').read()
+    data = json.loads(open('./data.json', 'r').read())
     player = Player()
-    result = player.betRequest(json)
+    result = player.betRequest(data)
     print result
 
 

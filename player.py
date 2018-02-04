@@ -1,34 +1,41 @@
 from card_converter import card_converter
 from shouldBet import shouldBet
+from strategy import Strategy
+
 
 class Player:
-    VERSION = "Version_06_old_algorithm"
+    VERSION = "Version_07"
+
+    def get_player(self):
+        player_index = self.game_state['in_action']
+        return self.game_state['players'][player_index]
+
+    def log_state(self):
+        print 'STATE: ', self.game_state
+        print 'STACK: ', self.player['stack']
 
     def betRequest(self, game_state):
-        print game_state
-        my_player_index = game_state['in_action']
-        my_player = game_state['players'][my_player_index]
-        my_stack = my_player['stack']
+        self.game_state = game_state
+        self.player = self.get_player()
 
-        my_cards = my_player['hole_cards']
-        convertedCards = card_converter(my_cards)
+        self.log_state()
 
-        isBetting = shouldBet(convertedCards)
-        if not isBetting :
-            return 0
-        print my_stack
-        return my_stack
+        strategy = Strategy(player=self.player, game_state=self.game_state)
+        bet = strategy.get_bet()
+        print 'BET: ', bet
+
+        return bet
 
     def showdown(self, game_state):
         pass
 
-    def get_bet_v1(my_player):
+    def get_bet_v1(self, my_player):
         my_stack = my_player['stack']
 
         my_cards = my_player['hole_cards']
         convertedCards = card_converter(my_cards)
 
         isBetting = shouldBet(convertedCards)
-        if not isBetting :
+        if not isBetting:
             return 0
         return my_stack
