@@ -6,7 +6,7 @@ from pre_flop import getPreFlopBet
 
 
 class Player:
-    VERSION = "Version_13"
+    VERSION = "Version_14"
 
     def get_player(self):
         player_index = self.game_state['in_action']
@@ -30,7 +30,7 @@ class Player:
             bet = strategy.get_bet()
             if bet > 0:
                 return bet
-            probability = strategy.player_hand.get_probability()
+            probability = strategy.player_hand.get_probability(2)
             return getPreFlopBet(probability, self.game_state, self.player)
             
 
