@@ -8,16 +8,16 @@ def shouldBet(cards):
   if firstCard > 10 and secondCard > 10:
     return True
 
-  highiestRankCard = cards[0] if cards[0]['rank'] > cards[1]['rank'] else cards[1]
-  lowestRankCard = cards[1] if cards[1]['rank'] > cards[0]['rank'] else cards[0]
+  # highiestRankCard = cards[0] if cards[0]['rank'] > cards[1]['rank'] else cards[1]
+  # lowestRankCard = cards[1] if cards[1]['rank'] > cards[0]['rank'] else cards[0]
 
-  if highiestRankCard['rank'] == 14 and isSuted(highiestRankCard, lowestRankCard):
-    return True
+  # if highiestRankCard['rank'] == 14 and isSuted(highiestRankCard, lowestRankCard):
+  #   return True
 
-  if highiestRank > 13 and isSuted(highiestRankCard, lowestRankCard):
-    return True
+  # if highiestRank > 13 and isSuted(highiestRankCard, lowestRankCard):
+  #   return True
 
-  return False
+  # return False
 
 def isSuted(firstCard, secondCard):
   return firstCard['suit'] == secondCard['suit']
