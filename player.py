@@ -1,3 +1,4 @@
+from card_converter import card_converter
 class Player:
     VERSION = "Version_01"
 
@@ -10,3 +11,6 @@ class Player:
 
     def showdown(self, game_state):
         pass
+
+
+    
