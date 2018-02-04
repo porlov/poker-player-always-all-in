@@ -9,15 +9,14 @@ from pre_flop import getPreFlopBet
 
 
 class Player:
-    VERSION = "Version_20"
+    VERSION = "Version_21"
 
     def get_player(self):
         player_index = self.game_state['in_action']
         return self.game_state['players'][player_index]
 
     def get_post_flop_rank(self):
-        cards = self.game_state['community_cards']
-        cards += self.player['hole_cards']
+        cards = self.game_state['community_cards'] + self.player['hole_cards']
 
         print 'POST FLOP CARDS: ', cards
 

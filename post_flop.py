@@ -9,8 +9,7 @@ def getPostFlopBet(game_state, current_player):
     2: bet,
     3: (1/64 * stack),
     4: (1/32 * stack),
-    5: (1/16 * stack),
-    6: (1 / 16 * stack),
+    5: (1/16 * stack)
   }
 
   if bet == 0 and cardsNumber == 5:
