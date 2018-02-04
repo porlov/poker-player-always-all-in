@@ -12,7 +12,7 @@ def getPostFlopBet(game_state, current_player):
     5: (1/16 * stack)
   }
 
-  if bet == 0 and cardsNumber == 5:
+  if game_state['bet_index'] == 0 and cardsNumber == 5:
     return minRaise
 
   if bet > table[cardsNumber]:
