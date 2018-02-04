@@ -6,7 +6,7 @@ from pre_flop import getPreFlopBet
 
 
 class Player:
-    VERSION = "Version_15"
+    VERSION = "Version_17"
 
     def get_player(self):
         player_index = self.game_state['in_action']
