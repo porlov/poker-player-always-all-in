@@ -2,7 +2,7 @@ from card_converter import card_converter
 from shouldBet import shouldBet
 
 class Player:
-    VERSION = "Version_02"
+    VERSION = "Version_03_suits"
 
     def betRequest(self, game_state):
         my_player_index = game_state['in_action']
