@@ -2,7 +2,7 @@ from card_converter import card_converter
 from shouldBet import shouldBet
 
 class Player:
-    VERSION = "Version_06"
+    VERSION = "Version_06_old_algorithm"
 
     def betRequest(self, game_state):
         print game_state
