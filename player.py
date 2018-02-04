@@ -4,7 +4,7 @@ from strategy import Strategy
 
 
 class Player:
-    VERSION = "Version_10"
+    VERSION = "Version_11"
 
     def get_player(self):
         player_index = self.game_state['in_action']

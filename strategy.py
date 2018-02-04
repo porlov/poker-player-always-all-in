@@ -31,7 +31,7 @@ class Strategy:
         if active_players_count == 3:
             return 36
         else:
-            return 40
+            return 50
 
     def all_in(self):
         return self.player['stack']
