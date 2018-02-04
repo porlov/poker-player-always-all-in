@@ -24,7 +24,7 @@ class Player:
         # bet = strategy.get_bet()
         # print 'BET: ', bet
 
-        return get_bet_v1(self.player)
+        return self.get_bet_v1(self.player)
 
     def showdown(self, game_state):
         pass
