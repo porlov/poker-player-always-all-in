@@ -2,10 +2,11 @@ from card_converter import card_converter
 from shouldBet import shouldBet
 from strategy import Strategy
 from post_flop import getPostFlopBet
+from pre_flop import getPreFlopBet
 
 
 class Player:
-    VERSION = "Version_12_postflop"
+    VERSION = "Version_13"
 
     def get_player(self):
         player_index = self.game_state['in_action']
@@ -29,6 +30,9 @@ class Player:
             bet = strategy.get_bet()
             if bet > 0:
                 return bet
+            probability = strategy.player_hand.get_probability()
+            return getPreFlopBet(probability, self.game_state, self.player)
+            
 
         # post flop
         if isPostFlop: 
